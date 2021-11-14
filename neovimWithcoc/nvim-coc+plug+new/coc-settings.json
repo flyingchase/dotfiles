@@ -1,0 +1,14 @@
+{
+	"diagnostic.warningSign": ">>",
+	"diagnostic.refreshOnInsertMode": true,
+	"diagnostic.virtualText": true,
+	"languageserver": {
+ 		"go": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"trace.server": "verbose",
+			"filetypes": ["go"]
+		}
+  	}
+}
+
