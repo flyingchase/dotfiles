@@ -1,0 +1,317 @@
+
+" 设置 leader 键位
+nnoremap ; <Nop>
+let mapleader=";"
+
+set ideajoin
+set idearefactormode=keep
+
+
+
+
+" ================================================================================================\
+" 基础设置
+set exrc                                                  " exec command in init.vim
+set secure                                                " safely do command above
+set autochdir                                             " auto change directory
+set number                                                " setting line
+set relativenumber                                        " setting line in relative mode
+set noexpandtab                                           " use only '\t' as tab
+set tabstop=4                                             " show how many space for a '\t'
+set shiftwidth=4                                          " use how many space for >> or << key
+set softtabstop=4                                         " use how many space when pressing tab
+set autoindent
+set list                                                  " show hiding char
+set listchars=tab:\|\ ,trail:·                            " define tab and space show
+set scrolloff=4                                           " least amount line below and above the cursor
+set ttimeoutlen=0                                         " set never wait for key
+set notimeout
+set viewoptions=cursor,folds,slash,unix                   " remember where to recover cursor
+set wrap                                                  " auto line feed
+set tw=0                                                  " text width for automatically wrapping
+set indentexpr=
+set splitright
+set splitbelow
+set noshowmode                                            " not showing current mode
+set showcmd                                               " show cmd inputing like key combine
+set wildmenu                                              " auto finish vim command
+set ignorecase                                            " ignore case when searching
+set smartcase                                             " ignore case only on searching
+set shortmess+=c                                          " don't show useless msg
+set inccommand=split                                      " show substitution automatically
+set completeopt=longest,noinsert,menuone,noselect,preview " complete opject with a menue
+set ttyfast                                               " make scrolling faster
+set visualbell                                            " flash screen to notify error
+set updatetime=100
+set virtualedit=block
+set lazyredraw
+set re=0                                                  "make increase speed
+set hidden
+set ReplaceWithRegister
+" 行高亮
+ set cursorline 
+" 模式搜索实时预览,增量搜索
+set incsearch
+" 设置搜索高亮
+set hlsearch
+" 输入模式下切换成 normal 
+set showmode
+set history=2000
+set noswapfile
+" 折叠设置
+" set folding paragraph
+set foldmethod=indent
+set foldenable
+set formatoptions-=tc
+" 剪切板共享
+set clipboard=unnamed
+if has('unnamedplus')
+  set clipboard^=unnamed
+  set clipboard^=unnamedplus
+endif
+set clipboard+=ideaput
+" This enables us to undo files even if you exit Vim.
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.config/vim/tmp/undo//
+endif
+" keep undo or temp file
+silent !mkdir -p ~/.config/nvim/tmp/backup
+silent !mkdir -p ~/.config/nvim/tmp/undo
+set backupdir=~/.config/nvim/tmp/backup,.
+set directory=~/.config/nvim/tmp/backup,.
+if has('persistent_undo')
+	set undofile
+	set undodir=~/.config/nvim/tmp/undo,.
+endif
+" 继承前一行的缩进格式
+set autoindent
+"设置光标不闪烁
+set gcr=a:block-blinkon0
+"取消光标闪烁
+set novisualbell
+"取消自动备份及产生swp文件
+set nobackup
+set nowb
+set noswapfile
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 键位映射
+" i模式下j k退出输入模式 
+ imap jk <Esc>
+" 在 normal 和 visual 模式下移动到行首行尾
+nnoremap L g_
+nnoremap H ^
+vnoremap L g_
+vnoremap H ^
+" normal下快速移动上下
+noremap <silent> J 5j
+noremap <silent> K 5k
+" 输入模式下移动
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+imap <C-b> <LEFT>
+imap <C-f> <RIGHT>
+imap <C-a> <Home>
+imap <C-e> <End>
+imap <C-s> <Esc>:w<CR>
+inoremap <C-i> <Esc>zzi<CR>
+" v 模式下上下移动当前行
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
+" 缩进调整
+nnoremap > >>
+nnoremap > >>
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 主题设置
+"设置256色
+set t_Co=256
+" 开启语法高亮功能
+syntax enable
+syntax on
+" 清除搜索后的高亮 
+nnoremap <Leader>sc :nohlsearch<CR>
+nnoremap <ESC> :nohlsearch<CR>
+" add hightline the y block
+autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=900}
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 最近打开的文件列表
+nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
+" 定义快速跳转回退
+nmap <Leader>i <C-]>
+nmap <Leader>o <C-t>
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 窗口管理
+" 新建横向和纵向窗口
+nnoremap <c-v> :action SplitVertically<CR>
+nnoremap <c-x> :action SplitHorizontally<CR>
+nnoremap <c-=> :action Unsplit<CR>
+"窗口光标移动
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+" 窗口间移动 window operation
+noremap <leader>wn :action NextWindow<CR>
+noremap <leader>wp :action PreviousWindow<CR>
+" Window actions
+nnoremap <c-\> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>wu :action Unsplit<CR>
+nnoremap <leader>wx :action HideAllWindows<CR>
+nnoremap <leader>wz :action ToggleDistractionFreeMode<CR> actions
+" 分屏窗口大小调整
+nnoremap <A-[> <Action>(StretchSplitToLeft)
+nnoremap <A-]> <Action>(StretchSplitToRight)
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+"借用第三方插件
+" idea 系列专属设置
+set argtextobj
+set surround
+set ideamarks
+set IdeaVimExtension
+set easymotion
+set multiple-cursors
+set commentary
+set exchange
+set highlightedyank
+set textobj-entire
+set NERDTree
+set vim-paragraph-motion
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 插件设置
+" nerdtree
+map <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>tv :NERDTreeFocus<CR>
+highlight NERDTreeFile ctermfg=12
+" easymotion leader+ss+待查单词的两个字符*2即可搜索当前显示区域内的待查单词
+nmap <leader>ss <Plug>(easymotion-s2)
+"Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+"Use upper target labels and type as a lower case
+let g:EasyMotion_use_upper = 0
+"acejump"
+" Press `f` to activate AceJump
+nnoremap <leader>f :<C-u>action AceAction<CR>
+" Press `F` to activate Target Mode
+" 在 Target 模式下会跳转到目标，并选中目标整个Word"
+nnoremap <leader>F :<C-u>action AceTargetAction<CR>
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 为IdeaVim插件增加自动切换为英文输入法的功能,
+" idea 需要安装 IdeaVimExtension plugin
+""中英文切换
+set keep-english-in-normal-and-restore-in-insert
+set keep-english-in-normal
+" viw +S +* 插入符号
+" cs + old+new符号 替换符号
+" ds ++符号 删除符号
+" di +符号 删除符号内的内容
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 多光标操作
+set multiple-cursors
+" Remap multiple-cursors shortcuts for Mac
+"nmap <C-n> <Plug>NextWholeOccurrence
+"xmap <C-n> <Plug>NextWholeOccurrence
+"nmap <C-x> <Plug>SkipOccurrence
+"xmap <C-x> <Plug>SkipOccurrence
+"nmap <C-p> <Plug>RemoveOccurrence
+"xmap <C-p> <Plug>RemoveOccurrence
+"nmap <S-C-n> <Plug>AllWholeOccurrences
+"xmap <S-C-n> <Plug>AllWholeOccurrences
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 使用idea内部功能 action实现
+"" 最近打开的文件列表
+nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
+" Select All
+nnoremap <Leader>a :action $SelectAll<CR>
+" reformat code
+nnoremap <A-C-l> :action ReformatCode<CR>
+
+nnoremap <leader>sp :action Stop<CR>
+" rename
+nnoremap gr :action RenameElement<CR>
+" run
+nnoremap <Leader>gr :action Run<CR>
+" 隐藏活动窗口
+noremap <leader>h :action HideActiveWindow<CR>
+nnoremap <leader>gs :action GotoSuperMethod<CR>
+nnoremap gb :action JumpToLastChange<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+" 实现方法
+nnoremap <leader>im :action ImplementMethods<CR>
+" 重写方法"
+nnoremap <leader>or :action OverrideMethods<CR>
+" 查看信息
+" 弹出一个窗口查看当前类所有方法
+nmap sf <Action>(FileStructurePopup)
+" 在左侧边栏中当前类的所有方法
+nmap sF <Action>(ActivateStructureToolWindow)
+nmap se <Action>(RecentFiles)
+nmap ss <Action>(ShowSettings)
+" 或者是显示类的结构
+nmap si <Action>(SelectIn)
+" 显示类中的关系;idea: <c-a>u
+nmap sd <Action>(ShowUmlDiagramPopup)
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 依据 neovim lua 添加新的快捷键
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :action CloseContent<CR>
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" 标签管理 Tab operation
+nnoremap . gt
+nnoremap , gT
+nmap <silent> <A-1> 1gt<cr>
+nmap <silent> <A-2>  2gt<cr>
+nmap <silent> <A-3>  3gt<cr>
+nmap <silent> <A-4>  4gt<cr>
+nmap <silent> <A-5>  5gt<cr>
+nmap <silent> <A-6>  6gt<cr>
+nmap <silent> <A-7>  7gt<cr>
+nmap <silent> <A-8>  8gt<cr>
+nmap <silent> <A-9>  9gt<cr>
+nmap <silent> <A-10>  10gt<cr>
+"==============================================================================================================================
+
+
+"==============================================================================================================================
+" others setting
+" 重载 ideavimrc
+nmap <LEADER>rc <Action>(IdeaVim.ReloadVimRc.reload)
+" terminal开关
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+" error jump[]
+nnoremap e] :action GotoNextError<CR>
+nnoremap e[ :action GotoPreviousError<CR>
+"==============================================================================================================================
