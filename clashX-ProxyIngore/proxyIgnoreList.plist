@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>192.168.0.0/16</string>
+	<string>10.0.0.0/8</string>
+	<string>172.16.0.0/12</string>
+	<string>127.0.0.1</string>
+	<string>localhost</string>
+	<string>*.local</string>
+	<string>*.crashlytics.com</string>
+	<string>bettertouchtool.net</string>
+	<string>updates.bettertouchtool.net</string>
+	<string>folivora.ai</string>
+	<string>updates.boastr.net</string>
+	<string>updates.folivora.ai</string>
+	<string>45.55.41.223</string>
+	<string>45.55.255.55</string>
+	<string>license.sublimehq.com</string>
+	<string>v3pro.crystalidea.com</string>
+	<string>www.crystalidea.com</string>
+	<string>crystalidea.com</string>
+	<string>resource.wondershare.com</string>
+	<string>my.wondershare.com</string>
+	<string>ori-myphone-download.wondershare.cc</string>
+	<string>download.wondershare.com</string>
+	<string>us.wondershare.com</string>
+	<string>cbs.wondershare.com</string>
+	<string>macplatform.wondershare.com</string>
+	<string>platform.wondershare.com</string>
+	<string>wondershare.cn.edgesuite.net</string>
+	<string>wondershare.cn.edgesuite.net</string>
+	<string>api.wondershare.com</string>
+	<string>api.rugarciap.com</string>
+	<string>proxifier.com</string>
+	<string>www.proxifier.com</string>
+	<string>micromat.com</string>
+</array>
+</plist>
