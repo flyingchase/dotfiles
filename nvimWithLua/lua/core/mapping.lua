@@ -19,8 +19,8 @@ local def_map = {
     ["n|<C-k>"] = map_cmd("<C-w>k"):with_noremap(),
     ["n|<A-[>"] = map_cr("vertical resize -5"):with_silent(),
     ["n|<A-]>"] = map_cr("vertical resize +5"):with_silent(),
-    ["n|<A-.>"] = map_cr("resize -2"):with_silent(),
-    ["n|<A-,>"] = map_cr("resize +2"):with_silent(),
+    ["n|<A-;>"] = map_cr("resize -2"):with_silent(),
+    ["n|<A-'>"] = map_cr("resize +2"):with_silent(),
     ["n|<C-q>"] = map_cmd(":wq<CR>"),
     ["n|<A-q>"] = map_cmd(":bw<CR>"),
     ["n|<A-S-q>"] = map_cmd(":bw!<CR>"),
@@ -56,7 +56,7 @@ local def_map = {
     ["i|<enter>"] = map_cmd("s<C-R>=v:lua.enter_key()<CR>!"):with_noremap()
         :with_silent(),
     ["i|<C-i>"] = map_cmd("<Esc>zzi<CR>"),
-    ["n|<leader>fw"] = map_cmd("telescope.builtin.live_grep()<cr>")
+    ["n|<leader>fa"] = map_cmd("telescope.builtin.live_grep()<cr>")
 }
 
 bind.nvim_load_mapping(def_map)

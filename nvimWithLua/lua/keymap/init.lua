@@ -38,9 +38,9 @@ local plug_map = {
         :with_nowait(),
     ["n|<leader>lr"] = map_cr("LspRestart"):with_noremap():with_silent()
         :with_nowait(),
-    ["n|e["] = map_cr("Lspsaga diagnostic_jump_next"):with_noremap()
+    ["n|e]"] = map_cr("Lspsaga diagnostic_jump_next"):with_noremap()
         :with_silent(),
-    ["n|e]"] = map_cr("Lspsaga diagnostic_jump_prev"):with_noremap()
+    ["n|e["] = map_cr("Lspsaga diagnostic_jump_prev"):with_noremap()
         :with_silent(),
     ["n|K"] = map_cr("Lspsaga hover_doc"):with_noremap():with_silent(),
     ["n|<C-Up>"] = map_cr(
@@ -84,7 +84,7 @@ local plug_map = {
     ["n|<leader>cl"] = map_cr("TroubleToggle loclist"):with_noremap()
         :with_silent(),
     -- Plugin nvim-tree
-    ["n|<leader>e"] = map_cr("NvimTreeToggle"):with_noremap():with_silent(),
+    ["n|<Leader>e"] = map_cr("NvimTreeToggle"):with_noremap():with_silent(),
     ["n|<Leader>nf"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent(),
     ["n|<Leader>nr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent(),
     -- Plugin Telescope
@@ -111,7 +111,7 @@ local plug_map = {
     ["n|F"] = map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
     ["n|t"] = map_cmd("v:lua.enhance_ft_move('t')"):with_expr(),
     ["n|T"] = map_cmd("v:lua.enhance_ft_move('T')"):with_expr(),
-    ["n|;"] = map_cmd("v:lua.enhance_ft_move(';')"):with_expr(),
+    ["n|,"] = map_cmd("v:lua.enhance_ft_move(',')"):with_expr(),
     -- Plugin Hop
     ["n|<leader>w"] = map_cu("HopWord"):with_noremap(),
     ["n|<leader>j"] = map_cu("HopLine"):with_noremap(),

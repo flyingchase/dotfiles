@@ -1,19 +1,13 @@
 local ui = {}
 local conf = require("modules.ui.config")
+
+ui["kyazdani42/nvim-web-devicons"] = {opt = false}
+ui["sainnhe/edge"] = {opt = false, config = conf.edge}
 ui["catppuccin/nvim"] = {
     opt = false,
     as = "catppuccin",
     config = conf.catppuccin
 }
-ui["kyazdani42/nvim-web-devicons"] = {opt = false}
-
-ui["sainnhe/everforest"] = {opt = false,config=conf.eveforest}
-ui["yeddaif/neovim-purple"] = {config = conf.neovim_purple, opt = false}
-ui["Rigellute/shades-of-purple.vim"] = {
-    opt = false,
-    config = conf.shades_of_purple
-}
-ui["sainnhe/edge"] = {opt = false, config = conf.edge}
 ui["hoob3rt/lualine.nvim"] = {
     opt = true,
     after = "lualine-lsp-progress",
@@ -43,4 +37,10 @@ ui["akinsho/nvim-bufferline.lua"] = {
     config = conf.nvim_bufferline
 }
 ui["dstein64/nvim-scrollview"] = {opt = true, event = "BufRead"}
+ui["sainnhe/everforest"] = {opt = false, config = conf.everforest}
+ui["yeddaif/neovim-purple"] = {config = conf.neovim_purple, opt = false}
+ui["Rigellute/shades-of-purple.vim"] = {
+    opt = false,
+    config = conf.shades_of_purple
+}
 return ui

@@ -30,6 +30,7 @@ function config.telescope()
     if not packer_plugins["telescope-zoxide"].loaded then
         vim.cmd [[packadd telescope-zoxide]]
     end
+
     require("telescope").setup {
         defaults = {
             prompt_prefix = "🔭 ",
@@ -71,11 +72,11 @@ function config.telescope()
                     ["conf"] = home .. "/.config",
                     ["data"] = home .. "/.local/share",
                     ["nvim"] = home .. "/.config/nvim",
-                    -- ["code"] = home .. "/code",
-                    -- ["c"] = home .. "/code/c",
-                    -- ["cpp"] = home .. "/code/cpp",
-                    ["go"] = home .. "/go/src"
-                    -- ["rust"] = home .. "/code/rs"
+                    ["code"] = home .. "/code",
+                    ["c"] = home .. "/code/c",
+                    ["cpp"] = home .. "/code/cpp",
+                    ["go"] = home .. "/go/src",
+                    ["rust"] = home .. "/code/rs"
                 }
             },
             media_files = {
@@ -84,6 +85,7 @@ function config.telescope()
             }
         }
     }
+
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("project")
     require("telescope").load_extension("frecency")
@@ -97,7 +99,7 @@ function config.trouble()
         height = 10, -- height of the trouble list when position is top or bottom
         width = 50, -- width of the list when position is left or right
         icons = true, -- use devicons for filenames
-        mode = "lsp_workspace_diagnostics", -- "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"
+        mode = "document_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
         fold_open = "", -- icon used for open folds
         fold_closed = "", -- icon used for closed folds
         action_keys = {

@@ -1,9 +1,5 @@
 local config = {}
 
-function config.shades_of_purple() end
-
-function config.everforest() vim.cmd [[set background=dark]] end
-function config.neovim_purple() end
 function config.edge()
     vim.cmd [[set background=dark]]
     vim.g.edge_style = "aura"
@@ -20,7 +16,7 @@ function config.catppuccin()
         term_colors = true,
         styles = {
             comments = "italic",
-            functions = "italic",
+            functions = "italic,bold",
             keywords = "italic",
             strings = "NONE",
             variables = "NONE"
@@ -63,6 +59,7 @@ function config.catppuccin()
         }
     })
 end
+
 function config.lualine()
     local gps = require("nvim-gps")
 
@@ -88,11 +85,8 @@ function config.lualine()
     require("lualine").setup {
         options = {
             icons_enabled = true,
-            -- theme = "onedark",
             -- theme = "catppuccin",
-            theme = "everforest_dark",
-            -- theme = "neovim_purple",
-            -- theme = "shades_of_purple",
+            theme = "everforest",
             disabled_filetypes = {},
             component_separators = "|",
             section_separators = {left = "", right = ""}
@@ -106,11 +100,7 @@ function config.lualine()
             lualine_x = {
                 {
                     "diagnostics",
-                    sources = {"nvim_lsp"},
-                    color_error = "#BF616A",
-                    color_warn = "#EBCB8B",
-                    color_info = "#81A1AC",
-                    color_hint = "#88C0D0",
+                    sources = {'nvim_diagnostic'},
                     symbols = {error = " ", warn = " ", info = " "}
                 }
             },
@@ -135,12 +125,12 @@ end
 function config.nvim_tree()
     local tree_cb = require"nvim-tree.config".nvim_tree_callback
     require("nvim-tree").setup {
-        gitignore = true,
+        git = {enable = true, ignore = false, timeout = 500},
         ignore = {".git", "node_modules", ".cache"},
         open_on_tab = false,
         disable_netrw = true,
-        hijack_cursor = true,
         hijack_netrw = true,
+        hijack_cursor = true,
         auto_close = true,
         update_cwd = true,
         highlight_opened_files = true,
@@ -228,16 +218,38 @@ function config.nvim_bufferline()
 end
 
 function config.gitsigns()
-    if not packer_plugins["plenary.nvim"].loaded then
-        vim.cmd [[packadd plenary.nvim]]
-    end
     require("gitsigns").setup {
         signs = {
-            add = {hl = "GitGutterAdd", text = "▋"},
-            change = {hl = "GitGutterChange", text = "▋"},
-            delete = {hl = "GitGutterDelete", text = "▋"},
-            topdelete = {hl = "GitGutterDeleteChange", text = "▔"},
-            changedelete = {hl = "GitGutterChange", text = "▎"}
+            add = {
+                hl = 'GitSignsAdd',
+                text = '│',
+                numhl = 'GitSignsAddNr',
+                linehl = 'GitSignsAddLn'
+            },
+            change = {
+                hl = 'GitSignsChange',
+                text = '│',
+                numhl = 'GitSignsChangeNr',
+                linehl = 'GitSignsChangeLn'
+            },
+            delete = {
+                hl = 'GitSignsDelete',
+                text = '_',
+                numhl = 'GitSignsDeleteNr',
+                linehl = 'GitSignsDeleteLn'
+            },
+            topdelete = {
+                hl = 'GitSignsDelete',
+                text = '‾',
+                numhl = 'GitSignsDeleteNr',
+                linehl = 'GitSignsDeleteLn'
+            },
+            changedelete = {
+                hl = 'GitSignsChange',
+                text = '~',
+                numhl = 'GitSignsChangeNr',
+                linehl = 'GitSignsChangeLn'
+            }
         },
         keymaps = {
             -- Default keymap options
@@ -276,8 +288,7 @@ end
 
 function config.indent_blankline()
     vim.opt.termguicolors = true
-    -- vim.opt.list = true
-    -- vim.opt.listchars:append("space:⋅")
+    vim.opt.list = true
     require("indent_blankline").setup {
         char = "│",
         show_first_indent_level = true,
@@ -294,11 +305,35 @@ function config.indent_blankline()
             "class", "function", "method", "block", "list_literal", "selector",
             "^if", "^table", "if_statement", "while", "for", "type", "var",
             "import"
-        }
-        -- space_char_blankline = " "
+        },
+        space_char_blankline = " "
     }
     -- because lazy load indent-blankline so need readd this autocmd
     vim.cmd("autocmd CursorMoved * IndentBlanklineRefresh")
 end
 
+function config.shades_of_purple() end
+
+function config.everforest()
+    vim.cmd [[set background=dark]]
+    -- 在 dark 和 light 之上可选 soft medium hard
+    vim.g.everforest_background = 'hard'
+    vim.g.everforest_enable_italic = 1
+    -- vim.g.everforest_disable_italic_comment = 1
+    -- 主题透明设置 透明则为 1
+    -- vim.g.everforest_transparent_background = 1
+    vim.g.everforest_better_performance = 1
+    -- 当前光标所在文字的高亮 bold underline italic
+    -- vim.g.everforest_current_word = 'bold'
+    -- 高亮错误
+    -- vim.g.everforest_diagnostic_text_highlight = 1
+    -- vim.g.everforest_lightline_disable_bold = 1
+    -- vim.g.everforest_diagnostic_line_highlight = 1
+    -- 可选  colored grey(defaults)
+    vim.g.everforest_diagnostic_virtual_text = 'grey'
+    -- 对比度 默认 low 可选 high
+    vim.g.everforest_ui_contrast = 'high'
+    vim.g.everforest_show_eob = 1
+end
+function config.neovim_purple() end
 return config

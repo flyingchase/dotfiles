@@ -96,10 +96,10 @@ local function load_options()
     }
 
     local bw_local = {
-        undofile = true,
+        undofile = false,
         synmaxcol = 2500,
         formatoptions = "1jcroql",
-        textwidth = 80,
+        textwidth = 120,
         expandtab = true,
         autoindent = true,
         tabstop = 4,

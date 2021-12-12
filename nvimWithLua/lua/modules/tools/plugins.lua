@@ -16,7 +16,6 @@ tools["nvim-telescope/telescope-fzf-native.nvim"] = {
     run = "make",
     after = "telescope.nvim"
 }
-
 tools["nvim-telescope/telescope-project.nvim"] = {
     opt = true,
     after = "telescope.nvim"
