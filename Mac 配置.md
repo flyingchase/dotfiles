@@ -8,19 +8,36 @@
 
 <img src="https://cdn.jsdelivr.net/gh/flyingchase/Private-Img@master/uPic/IrOAnt.png" alt="IrOAnt" style="zoom:50%;" />
 
+教训:
 
+- 做好多处备份, 机械和固态多个备份, 在升级和较多本地内容变动时加强备份频率;
+- 少折腾多干活, 黑苹果不要追求太完美, 现有的版本能稳定运行即可, 多刷题多学习, 不要花时间过于折腾;
 
-## 系统设置
+## 系统
 
-### 概述
-
-
-
-### 常用设置
-
+### 系统设置
 
 
 
+#### 常用设置
+
+1. 内建触控板忽视
+
+   辅助功能-指针控制
+
+2. 触控板
+
+   <img src="https://cdn.jsdelivr.net/gh/flyingchase/Private-Img@master/uPic/image-20211215111738321.png" alt="image-20211215111738321" style="zoom:50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/flyingchase/Private-Img@master/uPic/5mWWsN.png" alt="5mWWsN" style="zoom:50%;" />
+
+
+
+3. Karabiner 键位控制
+
+   设置`Caps Lock`单按为`Esc`，两次配合为`Ctrl`键位
+
+   
 
 ## 常用软件说明
 
@@ -30,29 +47,27 @@
 
 ### 知识管理系统
 
-#### Typora
+#### Typora——md 编辑器
 
-#### Obsidian
+#### Obsidian——笔记管理
 
-#### Anki
+#### Anki——知识复习
 
-#### Notion
+#### Notion——LeetCode艾宾浩斯遗忘曲线
 
-#### ticktick
+#### ticktick——任务管理
 
-#### Reeder
+#### Reeder——RSS 阅读
 
 ### 娱乐
 
 lxmusic 作为音乐播放器，INA 作为影音播放器，Downie4 作为视频下载器
 
-
-
 ### 工具
 
 NDMdowmload 接管系统下载，
 
-
+微信小助手
 
 ## 开发环境配置
 
@@ -76,7 +91,6 @@ brew bundle dump --describe --force --file="~/Documents/github/dotfiles/Brewfile
 	cask ...
 	mas ...
 */
-
 ```
 
 使用`brew bundle`恢复备份文件
@@ -94,21 +108,13 @@ brew bundle --file="~/Documents/github/dotfiles/Brewfile"
 
 使用`Automator`定时备份和自动上传 github
 
-
-
-
-
 ### dotfiels
 
 使用`dotbot`管理 dotfiles文件
 
-
-
 ### 终端设置
 
 采用`everforest`作为美化主题，p10k 作为终端主题，`zinit`管理 zsh
-
-
 
 ### Goland
 

@@ -45,10 +45,6 @@ brew "exa"
 brew "fd", args: ["HEAD"]
 # Banner-like program prints strings as ASCII art
 brew "figlet"
-# Text-based UI library
-brew "ncurses"
-# User-friendly command-line shell for UNIX-like operating systems
-brew "fish"
 # Command-line outline and bitmap font editor/converter
 brew "fontforge"
 # Command-line fuzzy finder written in Go
@@ -67,6 +63,8 @@ brew "gitui"
 brew "guile"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Text-based UI library
+brew "ncurses"
 # Improved top (interactive process viewer)
 brew "htop"
 # Configurable static site generator
@@ -214,3 +212,13 @@ cask "switchkey"
 cask "ticktick"
 # Third-party NetEase cloud player
 cask "yesplaymusic"
+mas "CAJ云阅读", id: 1121965993
+mas "Cinebench", id: 1438772273
+mas "iPreview", id: 1519213509
+mas "Keynote 讲演", id: 409183694
+mas "Maipo", id: 789066512
+mas "Pocket", id: 568494494
+mas "Toolbox for Keynote -Templates", id: 582635628
+mas "Xcode", id: 497799835
+mas "Xnip", id: 1221250572
+mas "微信", id: 836500024
