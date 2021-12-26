@@ -85,8 +85,8 @@ function config.lualine()
     require("lualine").setup {
         options = {
             icons_enabled = true,
-            -- theme = "catppuccin",
-            theme = "everforest",
+            -- theme = "everforest",
+            theme = "sonokai",
             disabled_filetypes = {},
             component_separators = "|",
             section_separators = {left = "", right = ""}
@@ -313,20 +313,40 @@ function config.indent_blankline()
 end
 
 function config.shades_of_purple() end
-
+function config.sonokai()
+    vim.cmd [[set background=dark]]
+    -- andromeda
+    vim.g.sonokai_style = "maia"
+    -- 在 dark 和 light 之上可选 soft medium hard
+    vim.g.sonokai_enable_italic = 1
+    vim.g.sonokai_disable_italic_comment = 1
+    -- 主题透明设置 透明则为 1
+    -- vim.g.sonokai_transparent_background = 1
+    vim.g.sonokai_better_performance = 1
+    -- 当前光标所在文字的高亮 bold underline italic
+    -- vim.g.sonokai_current_word = 'bold'
+    -- 高亮错误
+    vim.g.sonokai_diagnostic_text_highlight = 1
+    vim.g.sonokai_lightline_disable_bold = 1
+    -- vim.g.sonokai_diagnostic_line_highlight = 1
+    -- 可选  colored grey(defaults)
+    vim.g.sonokai_diagnostic_virtual_text = 'colored'
+    -- 对比度 默认 low 可选 high
+    vim.g.sonokai_show_eob = 1
+end
 function config.everforest()
     vim.cmd [[set background=dark]]
     -- 在 dark 和 light 之上可选 soft medium hard
-    vim.g.everforest_background = 'hard'
+    vim.g.everforest_background = 'medium'
     vim.g.everforest_enable_italic = 1
-    -- vim.g.everforest_disable_italic_comment = 1
+    vim.g.everforest_disable_italic_comment = 1
     -- 主题透明设置 透明则为 1
     -- vim.g.everforest_transparent_background = 1
     vim.g.everforest_better_performance = 1
     -- 当前光标所在文字的高亮 bold underline italic
     -- vim.g.everforest_current_word = 'bold'
     -- 高亮错误
-    -- vim.g.everforest_diagnostic_text_highlight = 1
+    vim.g.everforest_diagnostic_text_highlight = 1
     -- vim.g.everforest_lightline_disable_bold = 1
     -- vim.g.everforest_diagnostic_line_highlight = 1
     -- 可选  colored grey(defaults)

@@ -50,7 +50,7 @@ local leader_map = function()
 end
 
 local neovide_config = function()
-    vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h16]]
+    vim.cmd [[set guifont=JetBrainsMono\ Nerd\ Font:h12]]
     vim.g.neovide_refresh_rate = 60
     vim.g.neovide_cursor_vfx_mode = "railgun"
     vim.g.neovide_no_idle = true
@@ -156,9 +156,8 @@ local load_core = function()
 
     -- vim.cmd [[colorscheme catppuccin]]
     -- vim.cmd [[colorscheme neovim_purple]]
-    -- vim.cmd [[colorscheme catppuccin]]
-    
-    vim.cmd [[colorscheme everforest]]
+    -- vim.cmd [[colorscheme everforest]]
+    vim.cmd [[colorscheme sonokai]]
     -- vim.cmd [[colorscheme shades_of_purple]]
     -- vim.cmd [[colorscheme edge]]
 end

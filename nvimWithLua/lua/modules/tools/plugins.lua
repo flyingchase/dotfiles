@@ -23,12 +23,10 @@ tools["nvim-telescope/telescope-project.nvim"] = {
 tools["nvim-telescope/telescope-frecency.nvim"] = {
     opt = true,
     after = "telescope.nvim",
-    requires = {{"tami5/sqlite.lua", opt = true}}
+    requires = {{"tami5/sqlite.lua", opt = true}},
+    config = function() require("telescope").load_extension("frecency") end
 }
-tools["nvim-telescope/telescope-media-files.nvim"] = {
-    opt = true,
-    after = "telescope.nvim"
-}
+
 tools["jvgrootveld/telescope-zoxide"] = {opt = true, after = "telescope.nvim"}
 tools["thinca/vim-quickrun"] = {opt = true, cmd = {"QuickRun", "Q"}}
 tools["michaelb/sniprun"] = {
@@ -52,4 +50,6 @@ tools["gelguy/wilder.nvim"] = {
     config = conf.wilder,
     requires = {{"romgrk/fzy-lua-native", after = "wilder.nvim"}}
 }
+tools["famiu/bufdelete.nvim"] = {opt = true, cmd = {"Bdelete", "Bwipeout"}}
+
 return tools

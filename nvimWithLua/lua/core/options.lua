@@ -31,11 +31,11 @@ local function load_options()
         backup = false,
         writebackup = false,
         swapfile = false,
-        directory = global.cache_dir .. "swap/",
+        -- directory = global.cache_dir .. "swap/",
         undodir = global.cache_dir .. "undo/",
-        backupdir = global.cache_dir .. "backup/",
-        viewdir = global.cache_dir .. "view/",
-        spellfile = global.cache_dir .. "spell/en.uft-8.add",
+        -- backupdir = global.cache_dir .. "backup/",
+        -- viewdir = global.cache_dir .. "view/",
+        -- spellfile = global.cache_dir .. "spell/en.uft-8.add",
         history = 2000,
         shada = "!,'300,<50,@100,s10,h",
         backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
@@ -96,10 +96,10 @@ local function load_options()
     }
 
     local bw_local = {
-        undofile = false,
+        undofile = true,
         synmaxcol = 2500,
         formatoptions = "1jcroql",
-        textwidth = 120,
+        textwidth = 80,
         expandtab = true,
         autoindent = true,
         tabstop = 4,

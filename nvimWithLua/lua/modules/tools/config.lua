@@ -1,34 +1,10 @@
+local home = require('core.global').home
 local config = {}
 
 function config.telescope()
-    local home = os.getenv("HOME")
-
-    if not packer_plugins["popup.nvim"].loaded then
-        vim.cmd [[packadd popup.nvim]]
-    end
-
-    if not packer_plugins["telescope-fzf-native.nvim"].loaded then
-        vim.cmd [[packadd telescope-fzf-native.nvim]]
-    end
-
-    if not packer_plugins["telescope-project.nvim"].loaded then
-        vim.cmd [[packadd telescope-project.nvim]]
-    end
 
     if not packer_plugins["sqlite.lua"].loaded then
         vim.cmd [[packadd sqlite.lua]]
-    end
-
-    if not packer_plugins["telescope-frecency.nvim"].loaded then
-        vim.cmd [[packadd telescope-frecency.nvim]]
-    end
-
-    if not packer_plugins["telescope-media-files.nvim"].loaded then
-        vim.cmd [[packadd telescope-media-files.nvim]]
-    end
-
-    if not packer_plugins["telescope-zoxide"].loaded then
-        vim.cmd [[packadd telescope-zoxide]]
     end
 
     require("telescope").setup {
@@ -39,8 +15,8 @@ function config.telescope()
                 horizontal = {prompt_position = "bottom", results_width = 0.6},
                 vertical = {mirror = false}
             },
-            file_previewer = require"telescope.previewers".vim_buffer_cat.new,
-            grep_previewer = require"telescope.previewers".vim_buffer_vimgrep
+            file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+            grep_previewer = require("telescope.previewers").vim_buffer_vimgrep
                 .new,
             qflist_previewer = require"telescope.previewers".vim_buffer_qflist
                 .new,
@@ -78,18 +54,12 @@ function config.telescope()
                     ["go"] = home .. "/go/src",
                     ["rust"] = home .. "/code/rs"
                 }
-            },
-            media_files = {
-                filetypes = {"png", "webp", "jpg", "jpeg", "pdf"},
-                find_cmd = "fd"
             }
         }
     }
 
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("project")
-    require("telescope").load_extension("frecency")
-    require("telescope").load_extension("media_files")
     require("telescope").load_extension("zoxide")
 end
 

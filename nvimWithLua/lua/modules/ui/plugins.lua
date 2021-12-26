@@ -38,6 +38,7 @@ ui["akinsho/nvim-bufferline.lua"] = {
 }
 ui["dstein64/nvim-scrollview"] = {opt = true, event = "BufRead"}
 ui["sainnhe/everforest"] = {opt = false, config = conf.everforest}
+ui["sainnhe/sonokai"] = {opt = false, config = conf.sonokai}
 ui["yeddaif/neovim-purple"] = {config = conf.neovim_purple, opt = false}
 ui["Rigellute/shades-of-purple.vim"] = {
     opt = false,
