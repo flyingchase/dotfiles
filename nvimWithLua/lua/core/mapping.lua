@@ -19,11 +19,11 @@ local def_map = {
     ["n|<C-k>"] = map_cmd("<C-w>k"):with_noremap(),
     ["n|<A-[>"] = map_cr("vertical resize -5"):with_silent(),
     ["n|<A-]>"] = map_cr("vertical resize +5"):with_silent(),
-    ["n|<A-;>"] = map_cr("resize -2"):with_silent(),
-    ["n|<A-'>"] = map_cr("resize +2"):with_silent(),
+    ["n|<A-,>"] = map_cr("resize -2"):with_silent(),
+    ["n|<A-.>"] = map_cr("resize +2"):with_silent(),
     ["n|<C-q>"] = map_cmd(":wq<CR>"),
     ["n|<A-q>"] = map_cmd(":Bwipeout<CR>"),
-    ["n|<A-S-q>"] = map_cmd(":Bwipeout!<CR>"),
+    ["n|<A-S-q>"] = map_cmd(":q!<CR>"),
     ["n|<leader>o"] = map_cr("setlocal spell! spelllang=en_us"),
     -- Insert
     ["i|<C-u>"] = map_cmd("<C-G>u<C-U>"):with_noremap(),
@@ -46,13 +46,7 @@ local def_map = {
     ["v|K"] = map_cmd(":m '<-2<cr>gv=gv"),
     ["v|<"] = map_cmd("<gv"),
     ["v|>"] = map_cmd(">gv"),
-
-    -- Visual
-    ["v|J"] = map_cmd(":m '>+1<cr>gv=gv"),
-    ["v|K"] = map_cmd(":m '<-2<cr>gv=gv"),
-    ["v|<"] = map_cmd("<gv"),
-    ["v|>"] = map_cmd(">gv"),
-    -- others new add
+        -- others new add
     ["n|gor"] = map_cmd(":GoRun<CR>"),
     ["n|got"] = map_cmd(":GoTestFunc<CR>"),
     ["n|L"] = map_cmd("g_"),

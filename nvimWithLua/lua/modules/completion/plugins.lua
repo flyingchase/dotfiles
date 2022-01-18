@@ -6,9 +6,18 @@ completion["neovim/nvim-lspconfig"] = {
     event = "BufReadPre",
     config = conf.nvim_lsp
 }
+completion["creativenull/efmls-configs-nvim"] = {
+    opt = false,
+    requires = "neovim/nvim-lspconfig"
+}
 completion["williamboman/nvim-lsp-installer"] = {
     opt = true,
     after = "nvim-lspconfig"
+}
+completion["RishabhRD/nvim-lsputils"] = {
+    opt = true,
+    after = "nvim-lspconfig",
+    config = conf.nvim_lsputils
 }
 completion["tami5/lspsaga.nvim"] = {opt = true, after = "nvim-lspconfig"}
 completion["kosayoda/nvim-lightbulb"] = {
@@ -25,8 +34,8 @@ completion["hrsh7th/nvim-cmp"] = {
         {"saadparwaiz1/cmp_luasnip", after = "LuaSnip"},
         {"hrsh7th/cmp-nvim-lsp", after = "cmp_luasnip"},
         {"hrsh7th/cmp-nvim-lua", after = "cmp-nvim-lsp"},
-        {"andersevenrud/compe-tmux", branch = "cmp", after = "cmp-nvim-lua"},
-        {"hrsh7th/cmp-path", after = "compe-tmux"},
+        {"andersevenrud/cmp-tmux", after = "cmp-nvim-lua"},
+        {"hrsh7th/cmp-path", after = "cmp-tmux"},
         {"f3fora/cmp-spell", after = "cmp-path"},
         {"hrsh7th/cmp-buffer", after = "cmp-spell"},
         {"kdheepak/cmp-latex-symbols", after = "cmp-buffer"}

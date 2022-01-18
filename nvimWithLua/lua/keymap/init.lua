@@ -42,6 +42,8 @@ local plug_map = {
         :with_silent(),
     ["n|e["] = map_cr("Lspsaga diagnostic_jump_prev"):with_noremap()
         :with_silent(),
+    ["n|gs"] = map_cr("Lspsaga signature_help"):with_noremap():with_silent(),
+    ["n|gr"] = map_cr("Lspsaga rename"):with_noremap():with_silent(),
     ["n|K"] = map_cr("Lspsaga hover_doc"):with_noremap():with_silent(),
     ["n|<C-Up>"] = map_cr(
         "lua require('lspsaga.action').smart_scroll_with_saga(-1)"):with_noremap()
@@ -56,8 +58,6 @@ local plug_map = {
     ["n|gd"] = map_cr("Lspsaga preview_definition"):with_noremap():with_silent(),
     ["n|gD"] = map_cr("lua vim.lsp.buf.definition()"):with_noremap()
         :with_silent(),
-    ["n|gs"] = map_cr("Lspsaga signature_help"):with_noremap():with_silent(),
-    ["n|gr"] = map_cr("Lspsaga rename"):with_noremap():with_silent(),
     ["n|gh"] = map_cr("lua vim.lsp.buf.references()"):with_noremap()
         :with_silent(),
     ["n|<A-d>"] = map_cu('lua require("FTerm").toggle()'):with_noremap()
@@ -88,10 +88,14 @@ local plug_map = {
     ["n|<Leader>nf"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent(),
     ["n|<Leader>nr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent(),
     -- Plugin Telescope
-    ["n|<Leader>fp"] = map_cu("Telescope project"):with_noremap():with_silent(),
+    ["n|<Leader>fp"] = map_cu(
+        "lua require('telescope').extensions.project.project{}"):with_noremap()
+        :with_silent(),
+    ["n|<Leader>fr"] = map_cu(
+        "lua require('telescope').extensions.frecency.frecency{}"):with_noremap()
+        :with_silent(),
     ["n|<Leader>fe"] = map_cu("DashboardFindHistory"):with_noremap()
         :with_silent(),
-    ["n|<Leader>fr"] = map_cu("Telescope frecency"):with_noremap():with_silent(),
     ["n|<Leader>ff"] = map_cu("DashboardFindFile"):with_noremap():with_silent(),
     ["n|<Leader>sc"] = map_cu("DashboardChangeColorscheme"):with_noremap()
         :with_silent(),
@@ -111,7 +115,7 @@ local plug_map = {
     ["n|F"] = map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
     ["n|t"] = map_cmd("v:lua.enhance_ft_move('t')"):with_expr(),
     ["n|T"] = map_cmd("v:lua.enhance_ft_move('T')"):with_expr(),
-    ["n|;"] = map_cmd("v:lua.enhance_ft_move(';')"):with_expr(),
+    ["n|."] = map_cmd("v:lua.enhance_ft_move('.')"):with_expr(),
     -- Plugin Hop
     ["n|<leader>w"] = map_cu("HopWord"):with_noremap(),
     ["n|<leader>j"] = map_cu("HopLine"):with_noremap(),

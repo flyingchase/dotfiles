@@ -1,7 +1,10 @@
 local rhs_options = {}
 
 function rhs_options:new()
-    local instance = { cmd = "", options = { noremap = false,
+    local instance = {
+        cmd = "",
+        options = {
+            noremap = false,
             silent = false,
             expr = false,
             nowait = false
@@ -10,7 +13,9 @@ function rhs_options:new()
     setmetatable(instance, self)
     self.__index = self
     return instance
-end function rhs_options:map_cmd(cmd_string)
+end
+
+function rhs_options:map_cmd(cmd_string)
     self.cmd = cmd_string
     return self
 end
