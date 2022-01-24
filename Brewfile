@@ -5,12 +5,6 @@ tap "homebrew/core", "https://mirrors.ustc.edu.cn/homebrew-core.git"
 tap "homebrew/services"
 tap "railwaycat/emacsmacport"
 tap "universal-ctags/universal-ctags"
-# Fast, simple and clean video downloader
-brew "annie"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Command-line interface for SQLite
-brew "sqlite"
 # Record and share terminal sessions
 brew "asciinema"
 # Shell extension to jump to frequently used directories
@@ -39,12 +33,22 @@ brew "delta"
 brew "deno"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
+# Multi-platform support library with a focus on asynchronous I/O
+brew "libuv"
+# Platform built on V8 to build network applications
+brew "node", link: false
+# AST-based pattern checker for JavaScript
+brew "eslint"
 # Modern replacement for 'ls'
 brew "exa"
 # Simple, fast and user-friendly alternative to find
 brew "fd", args: ["HEAD"]
 # Banner-like program prints strings as ASCII art
 brew "figlet"
+# Text-based UI library
+brew "ncurses"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
 # Command-line outline and bitmap font editor/converter
 brew "fontforge"
 # Command-line fuzzy finder written in Go
@@ -63,8 +67,6 @@ brew "gitui"
 brew "guile"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Text-based UI library
-brew "ncurses"
 # Improved top (interactive process viewer)
 brew "htop"
 # Configurable static site generator
@@ -87,8 +89,6 @@ brew "iproute2mac"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Multi-platform support library with a focus on asynchronous I/O
-brew "libuv", args: ["HEAD"]
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Just-In-Time Compiler (JIT) for the Lua programming language
@@ -97,12 +97,14 @@ brew "luajit", args: ["HEAD"]
 brew "luarocks"
 # Bare libuv bindings for lua
 brew "luv", args: ["HEAD"]
+# Fast and simple video downloader
+brew "lux"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # GUI for vim, made for macOS
 brew "macvim", link: false
 # Text-to-HTML conversion tool
 brew "markdown"
-# Platform built on V8 to build network applications
-brew "node"
 # CLI for Node.js style checker and lint tool for Markdown files
 brew "markdownlint-cli"
 # Mac App Store command-line interface
@@ -113,6 +115,8 @@ brew "maven"
 brew "mysql"
 # Fast, highly customisable system info script
 brew "neofetch"
+# Parser generator tool and incremental parsing library
+brew "tree-sitter", link: false
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim", args: ["HEAD"]
 # Small build system for use with gyp or CMake
@@ -127,6 +131,8 @@ brew "perl"
 brew "prettier"
 # File browser
 brew "ranger"
+# Persistent key-value database, with built-in net interface
+brew "redis"
 # Adjust color temperature of your screen according to your surroundings
 brew "redshift"
 # Search tool like grep and The Silver Searcher
@@ -155,6 +161,8 @@ brew "universal-ctags", args: ["HEAD"], link: false
 brew "vale"
 # Vi 'workalike' with many additional features
 brew "vim", link: false
+# Vim script Language Lint
+brew "vint", link: false
 # Internet file retriever
 brew "wget"
 # Access X11 clipboards from the command-line
@@ -212,13 +220,3 @@ cask "switchkey"
 cask "ticktick"
 # Third-party NetEase cloud player
 cask "yesplaymusic"
-mas "CAJ云阅读", id: 1121965993
-mas "Cinebench", id: 1438772273
-mas "iPreview", id: 1519213509
-mas "Keynote 讲演", id: 409183694
-mas "Maipo", id: 789066512
-mas "Pocket", id: 568494494
-mas "Toolbox for Keynote -Templates", id: 582635628
-mas "Xcode", id: 497799835
-mas "Xnip", id: 1221250572
-mas "微信", id: 836500024
