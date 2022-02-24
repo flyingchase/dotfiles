@@ -17,6 +17,8 @@ brew "bat"
 brew "ccat"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
+# Cross-platform make
+brew "cmake"
 # High performance code minimap generator
 brew "code-minimap"
 # Color-highlighted diff(1) output
@@ -33,22 +35,26 @@ brew "delta"
 brew "deno"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
+# General purpose Language Server
+brew "efm-langserver"
 # Multi-platform support library with a focus on asynchronous I/O
 brew "libuv"
 # Platform built on V8 to build network applications
-brew "node", link: false
+brew "node"
 # AST-based pattern checker for JavaScript
 brew "eslint"
 # Modern replacement for 'ls'
 brew "exa"
 # Simple, fast and user-friendly alternative to find
-brew "fd", args: ["HEAD"]
+brew "fd"
 # Banner-like program prints strings as ASCII art
 brew "figlet"
-# Text-based UI library
-brew "ncurses"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Lint your Python code for style and logical errors
+brew "flake8"
 # Command-line outline and bitmap font editor/converter
 brew "fontforge"
 # Command-line fuzzy finder written in Go
@@ -67,6 +73,8 @@ brew "gitui"
 brew "guile"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Numerical library for C and C++
+brew "gsl"
 # Improved top (interactive process viewer)
 brew "htop"
 # Configurable static site generator
@@ -89,14 +97,18 @@ brew "iproute2mac"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Lossy speech compression library
+brew "libgsm"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Powerful, lightweight programming language
+brew "lua"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit", args: ["HEAD"]
 # Package manager for the Lua programming language
 brew "luarocks"
 # Bare libuv bindings for lua
-brew "luv", args: ["HEAD"]
+brew "luv"
 # Fast and simple video downloader
 brew "lux"
 # Powerful, clean, object-oriented scripting language
@@ -116,13 +128,15 @@ brew "mysql"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Parser generator tool and incremental parsing library
-brew "tree-sitter", link: false
+brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim", args: ["HEAD"]
 # Small build system for use with gyp or CMake
 brew "ninja"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Highly capable, feature-rich programming language
@@ -141,10 +155,14 @@ brew "ripgrep", args: ["HEAD"]
 brew "rustup-init"
 # Generate ASCII art with terminal, shell, and OS info
 brew "screenfetch"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Opinionated Lua code formatter
+brew "stylua"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Text interface for Git repositories
@@ -162,7 +180,7 @@ brew "vale"
 # Vi 'workalike' with many additional features
 brew "vim", link: false
 # Vim script Language Lint
-brew "vint", link: false
+brew "vint"
 # Internet file retriever
 brew "wget"
 # Access X11 clipboards from the command-line
@@ -177,6 +195,8 @@ brew "zsh-autosuggestions"
 brew "railwaycat/emacsmacport/emacs-mac"
 # Distribution of the Python and R programming languages for scientific computing
 cask "anaconda"
+# Android SDK component
+cask "android-platform-tools"
 # Graphical user interface for Aria2
 cask "aria2gui"
 # Tool to flash OS images to SD cards & USB drives
@@ -185,6 +205,8 @@ cask "balenaetcher", args: { language: "ist" }
 cask "basictex"
 # E-books management software
 cask "calibre", args: { language: "ist" }
+# Web debugging Proxy application
+cask "charles"
 # Tool to list all active shortcuts of the current application
 cask "cheatsheet", args: { language: "ist" }
 # Automated testing of webapps for Google Chrome
@@ -220,3 +242,14 @@ cask "switchkey"
 cask "ticktick"
 # Third-party NetEase cloud player
 cask "yesplaymusic"
+mas "CAJ云阅读", id: 1121965993
+mas "Cinebench", id: 1438772273
+mas "Edison Mail", id: 1489591003
+mas "iPreview", id: 1519213509
+mas "Keynote 讲演", id: 409183694
+mas "Maipo", id: 789066512
+mas "Pocket", id: 568494494
+mas "Toolbox for Keynote -Templates", id: 582635628
+mas "Xcode", id: 497799835
+mas "Xnip", id: 1221250572
+mas "微信", id: 836500024
