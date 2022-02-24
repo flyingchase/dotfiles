@@ -130,19 +130,36 @@ brew bundle --file="~/Documents/github/dotfiles/Brewfile"
 
 
 
+## 报错及解决汇总
+
+
+
+
+### brew 安装 tar 报错
+
+``` shell
+export HOMEBREW_BOTTLE_DOMAIN=''
+```
+
+
+
+### 禁止`.DS_store`自动生成
+
+`.DS_store`存储文件夹的显示信息（文件图标、背景色类似 window 的 desktop.ini）
+
+`defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE`
+
+恢复其自动生成
+
+`defaults delete com.apple.desktopservices DSDontWriteNetworkStores`
 
 
 
 
 
+### npm 安装package 显示 TSL1.2必须
 
-
-
-
-
-
-
-
+`npm set registry=https://registry.npmjs.org/`即可
 
 
 
