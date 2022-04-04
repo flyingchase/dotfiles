@@ -5,6 +5,12 @@ tap "homebrew/core", "https://mirrors.ustc.edu.cn/homebrew-core.git"
 tap "homebrew/services"
 tap "railwaycat/emacsmacport"
 tap "universal-ctags/universal-ctags"
+# C++ Common Libraries
+brew "abseil"
+# High dynamic-range image file format
+brew "openexr"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Record and share terminal sessions
 brew "asciinema"
 # Shell extension to jump to frequently used directories
@@ -51,8 +57,6 @@ brew "fd"
 brew "figlet"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Lint your Python code for style and logical errors
 brew "flake8"
 # Command-line outline and bitmap font editor/converter
@@ -87,8 +91,6 @@ brew "ilmbase", link: true
 brew "tcl-tk"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
-# High dynamic-range image file format
-brew "openexr", link: false
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # CLI wrapper for basic network utilities on macOS - ip command
@@ -99,6 +101,8 @@ brew "jq"
 brew "lazygit"
 # Lossy speech compression library
 brew "libgsm"
+# C99 library which implements a VT220 or xterm terminal emulator
+brew "libvterm"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Powerful, lightweight programming language
@@ -191,8 +195,12 @@ brew "yarn"
 brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
+brew "zsh-completions"
 # YAMAMOTO Mitsuharu's Mac port of GNU Emacs
 brew "railwaycat/emacsmacport/emacs-mac"
+# iOS App Store alternative
+cask "altserver"
 # Distribution of the Python and R programming languages for scientific computing
 cask "anaconda"
 # Android SDK component
@@ -224,6 +232,7 @@ cask "hyperdock"
 cask "karabiner-elements"
 # Open-source keystroke visualizer
 cask "keycastr"
+# Simple and elegant markdown editor
 cask "mark-text"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
@@ -242,14 +251,3 @@ cask "switchkey"
 cask "ticktick"
 # Third-party NetEase cloud player
 cask "yesplaymusic"
-mas "CAJ云阅读", id: 1121965993
-mas "Cinebench", id: 1438772273
-mas "Edison Mail", id: 1489591003
-mas "iPreview", id: 1519213509
-mas "Keynote 讲演", id: 409183694
-mas "Maipo", id: 789066512
-mas "Pocket", id: 568494494
-mas "Toolbox for Keynote -Templates", id: 582635628
-mas "Xcode", id: 497799835
-mas "Xnip", id: 1221250572
-mas "微信", id: 836500024
