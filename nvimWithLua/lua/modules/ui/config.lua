@@ -85,7 +85,8 @@ function config.lualine()
     require("lualine").setup {
         options = {
             icons_enabled = true,
-            theme = "sonokai",
+            -- theme = "sonokai",
+            theme = "everforest",
             disabled_filetypes = {},
             component_separators = "|",
             section_separators = {left = "", right = ""}
@@ -306,7 +307,7 @@ function config.sonokai()
     vim.g.sonokai_show_eob = 1
 end
 function config.everforest()
-    vim.cmd [[set background=dark]]
+    vim.cmd [[set background=light]]
     -- 在 dark 和 light 之上可选 soft medium hard
     vim.g.everforest_background = 'medium'
     vim.g.everforest_enable_italic = 1
@@ -323,7 +324,7 @@ function config.everforest()
     -- 可选  colored grey(defaults)
     vim.g.everforest_diagnostic_virtual_text = 'grey'
     -- 对比度 默认 low 可选 high
-    vim.g.everforest_ui_contrast = 'high'
+    vim.g.everforest_ui_contrast = 'low'
     vim.g.everforest_show_eob = 1
 end
 function config.neovim_purple() end
