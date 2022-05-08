@@ -212,9 +212,7 @@ brew bundle --file="~/Documents/github/dotfiles/Brewfile"
 
 使用`dotbot`管理 dotfiles文件
 
-### 终端设置
-
-#### zi
+### zi 管理 zsh
 
 https://z-shell.pages.dev/docs/getting_started/installation/
 

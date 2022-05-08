@@ -9,6 +9,8 @@ tap "universal-ctags/universal-ctags"
 brew "abseil"
 # High dynamic-range image file format
 brew "openexr"
+# Command-line interface for SQLite
+brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Record and share terminal sessions
@@ -19,6 +21,10 @@ brew "autojump"
 brew "bash-completion"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Python code formatter
+brew "black", link: false
+# X.Org: Core X11 protocol client library
+brew "libx11"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
@@ -32,7 +38,7 @@ brew "colordiff"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Reimplementation of ctags(1)
-brew "ctags"
+brew "ctags", link: false
 # Top-like interface for container metrics
 brew "ctop"
 # Programmatically minimize files to isolate features of interest
@@ -99,6 +105,8 @@ brew "iproute2mac"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Provides library functionality for FIDO U2F & FIDO 2.0, including USB
+brew "libfido2"
 # Lossy speech compression library
 brew "libgsm"
 # C99 library which implements a VT220 or xterm terminal emulator
@@ -115,10 +123,6 @@ brew "luarocks"
 brew "luv"
 # Fast and simple video downloader
 brew "lux"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
-# GUI for vim, made for macOS
-brew "macvim", link: false
 # Text-to-HTML conversion tool
 brew "markdown"
 # CLI for Node.js style checker and lint tool for Markdown files
@@ -132,9 +136,9 @@ brew "mysql"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Parser generator tool and incremental parsing library
-brew "tree-sitter"
+brew "tree-sitter", link: false
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 # Small build system for use with gyp or CMake
 brew "ninja"
 # Tiny, lightning fast, feature-packed file manager
@@ -147,6 +151,8 @@ brew "pandoc"
 brew "perl"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
+# Python version management
+brew "pyenv"
 # File browser
 brew "ranger"
 # Persistent key-value database, with built-in net interface
@@ -155,6 +161,8 @@ brew "redis"
 brew "redshift"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep", args: ["HEAD"]
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Rust toolchain installer
 brew "rustup-init"
 # Generate ASCII art with terminal, shell, and OS info
@@ -167,6 +175,8 @@ brew "shfmt"
 brew "starship"
 # Opinionated Lua code formatter
 brew "stylua"
+# Version control system designed to be a better CVS
+brew "subversion"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Text interface for Git repositories
@@ -178,7 +188,7 @@ brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Maintained ctags implementation
-brew "universal-ctags", args: ["HEAD"], link: false
+brew "universal-ctags", args: ["HEAD"]
 # Syntax-aware linter for prose
 brew "vale"
 # Vi 'workalike' with many additional features
@@ -197,8 +207,8 @@ brew "zoxide"
 brew "zsh-autosuggestions"
 # Additional completion definitions for zsh
 brew "zsh-completions"
-# YAMAMOTO Mitsuharu's Mac port of GNU Emacs
-brew "railwaycat/emacsmacport/emacs-mac"
+# GPU-accelerated terminal emulator
+cask "alacritty"
 # iOS App Store alternative
 cask "altserver"
 # Distribution of the Python and R programming languages for scientific computing
@@ -219,6 +229,8 @@ cask "charles"
 cask "cheatsheet", args: { language: "ist" }
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"
+# Utilities designed to make common development tasks easier
+cask "devtoys"
 # App to build and share containerized applications and microservices
 cask "docker"
 cask "fman"
@@ -232,8 +244,6 @@ cask "hyperdock"
 cask "karabiner-elements"
 # Open-source keystroke visualizer
 cask "keycastr"
-# Simple and elegant markdown editor
-cask "mark-text"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
 # Open-source download manager
@@ -242,8 +252,14 @@ cask "motrix"
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Git client
-cask "smartgit"
+# QuickLook plug-in that renders source code with syntax highlighting
+cask "qlcolorcode"
+# Display image info and preview unsupported formats in QuickLook
+cask "qlimagesize"
+# QuickLook generator for Markdown files
+cask "qlmarkdown"
+cask "qlstephen"
+cask "quicklook-json"
 # Rime input method engine
 cask "squirrel"
 cask "switchkey"
