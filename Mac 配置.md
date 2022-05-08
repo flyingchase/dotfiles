@@ -19,11 +19,15 @@
 
 #### 常用设置
 
-1. 内建触控板忽视
+1. 三指拖移
 
-   辅助功能-指针控制
+   辅助功能」-「指针控制」-「鼠标与触控板」控制
 
-2. 触控板
+1. 键盘光标响应
+
+   按键重复重复前延迟
+
+3. 触控板
 
    <img src="https://cdn.jsdelivr.net/gh/flyingchase/Private-Img@master/uPic/image-20211215111738321.png" alt="image-20211215111738321" style="zoom:50%;" />
 
@@ -35,7 +39,79 @@
 
    设置`Caps Lock`单按为`Esc`，两次配合为`Ctrl`键位
 
+4. 取消 4 位数密码限制
+
+```shell
+# 取消4位数密码限制 
+➜ pwpolicy -clearaccountpolicies
+
+# 更改密码
+➜ passwd
+```
+
+3. 允许安装任意来源 app
+
+   ```bash
+   # APP安装开启任何来源
+   ➜ sudo spctl --master-disable
+   ```
+
+4. Xcode Command Line Tools 安装
+
+   ```bash
+   # 安装 xcode 命令行工具
+   ➜ xcode-select --install
+   ```
+
+5. 减少程序坞响应时间
+
+   ```shell
+   # 设置启动坞动画时间设置为 0.5 秒
+   ➜ defaults write com.apple.dock autohide-time-modifier -float 0.5 && killall Dock
    
+   # 设置启动坞响应时间最短
+   ➜ defaults write com.apple.dock autohide-delay -int 0 && killall Dock
+   
+   # 恢复启动坞默认动画时间
+   ➜ defaults delete com.apple.dock autohide-time-modifier && killall Dock
+   
+   # 恢复默认启动坞响应时间
+   ➜ defaults delete com.apple.Dock autohide-delay && killall Dock
+   ```
+
+6. 修改启动台行列数
+
+   ```bash
+   # 设置列数为 9
+   ➜ defaults write com.apple.dock springboard-columns -int 9
+   
+   # 设置行数为 6
+   ➜ defaults write com.apple.dock springboard-rows -int 6
+   
+   # 重启 Dock 生效
+   ➜ killall Dock
+   
+   # 恢复默认的列数和行数
+   ➜ defaults write com.apple.dock springboard-rows Default
+   ➜ defaults write com.apple.dock springboard-columns Default
+   ```
+
+7. 关闭 SIP
+
+   重启 Mac，按住 Option 键进入启动盘选择模式，按 `⌘` + `R` 进入 Recovery 模式。
+
+   「菜单栏」 ->「 实用工具（Utilities）」-> 「终端（Terminal）」：
+
+   ```bash
+   # 关闭SIP
+   ➜ csrutil disable
+   
+   # 查看SIP状态
+   ➜ csrutil status
+   System Integrity Protection status: disabled.(表明关闭成功)
+   ```
+
+8. 
 
 ## 常用软件说明
 
@@ -77,6 +153,32 @@ NDMdowmload 接管系统下载，
 
 ### brew
 
+**安装**
+
+```shell
+➜ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# 更新 Homebrew
+➜ brew update
+
+#  搜索相关的包
+➜ brew search [关键词] 
+
+# 查看包的信息
+➜ rew info [软件名]
+ 
+# 查看已安装的包
+➜ brew list
+
+# 更新某个软件
+➜ brew upgrade [软件名]
+
+# 清理所有软件的旧版
+➜ brew cleanup
+
+# 卸载某个软件
+➜ brew uninstall [软件名]
+```
+
 使用 `brew bundle dump`备份tap，所安装的命令行工具，–cask 安装的app，App Store 安装的 app
 
 ``` shell
@@ -112,7 +214,190 @@ brew bundle --file="~/Documents/github/dotfiles/Brewfile"
 
 ### 终端设置
 
-采用`everforest`作为美化主题，p10k 作为终端主题，`zinit`管理 zsh
+#### zi
+
+https://z-shell.pages.dev/docs/getting_started/installation/
+
+采用`everforest`作为美化主题，p10k 作为终端主题，`zi`管理 zsh
+
+`zi`安装：
+
+```zsh
+sh -c "$(curl -fsSL https://zsh.pages.dev/i)" -- -i skip -b main
+```
+
+常见插件：
+
+```zsh
+ brew install autojump
+ # 拷贝到 plugins 目录下
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+关闭 URL 反斜杠转义
+
+```ini
+DISABLE_MAGIC_FUNCTIONS=true
+```
+
+禁止 zsh 自动更新
+
+```shell
+zstyle ':omz:update' mode disabled
+```
+
+
+
+### Pyenv 管理 Python 环境
+
+```bash
+# 安装 pyenv
+brew install pyenv
+# 写入 zsh
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# 常用命令
+# 查看已经安装的Python版本
+pyenv versions
+# 查看当前的 Python 版本
+pyenv version
+# 查看可安装的版本
+pyenv install -l
+
+# global 全局设置 一般不建议改变全局设置
+pyenv global <python版本>
+# shell 会话设置 只影响当前的shell会话
+pyenv shell <python版本>
+# 取消 shell 会话的设置
+pyenv shell --unset
+# local 本地设置 只影响所在文件夹
+pyenv local <python版本>
+```
+
+### nvm 管理Node.js版本
+
+```zsh
+# 安装 nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# 查看版本信息
+zsh
+nvm --version
+0.39.1
+
+# 查看当前 node 的版本
+nvm version 
+
+# 安装最新稳定版 node
+nvm install stable
+
+# 列出所有远程服务器的版本
+nvm ls-remote
+
+# 安装指定版本
+nvm install v12.22.9
+nvm install <version>
+
+# 列出所有已安装的版本
+nvm ls
+
+# 卸载指定的版本
+nvm uninstall <version>
+
+# 切换使用指定的版本node
+nvm use <version>
+
+# 显示当前的版本
+nvm current
+```
+
+
+
+
+
+### MySQL
+
+#### 安装 MySQL
+
+```bash
+# 搜索可以安装的版本
+brew search mysql
+
+# 安装对应的版本
+brew install mysql@5.7
+```
+
+#### 配置环境变量
+
+```bash
+# 查看 MySQL 可执行文件的位置
+cd /usr/local/Cellar/mysql@5.7/*/bin && pwd
+/usr/local/Cellar/mysql@5.7/5.7.37/bin
+```
+
+然后下面内容写入 `~/.zshrc` 配置文件中：
+
+```bash
+export PATH="${PATH}:/usr/local/Cellar/mysql@5.7/5.7.37/bin"
+```
+
+写入完成后可以使用 `zsh` 刷新一下配置或者手动 `source ~/.zshrc` 一下。
+
+#### 常用操作
+
+```shell
+# 查看 M有SQL 服务状态
+brew services info mysql@5.7
+mysql.server status
+
+# 启动 MySQL 服务
+brew services start mysql@5.7
+mysql.server start
+
+# 重启 MySQL 服务
+brew services restart mysql@5.7
+mysql.server restart
+
+# 停止 MySQL 服务
+brew services stop mysql@5.7
+mysql.server stop
+```
+
+#### 设置 MySQL 密码
+
+```bash
+# 默认是 root 用户是空密码 可以直接登录
+mysql -uroot
+
+# 修改 root 密码的 SQL语句
+mysql > use mysql;
+mysql > set password for 'root'@'localhost' = password('你设置的密码');
+
+# 刷新权限 并退出
+mysql > flush privileges;
+mysql > quit; 
+```
+
+
+
+### Redis
+
+```bash
+# 安装 redis
+brew install redis
+
+# 启动 redis 服务端
+redis-server
+
+# 启动 redis 客户端
+redis-cli
+
+# 编辑默认配置文件
+sudo vim /usr/local/etc/redis.conf
+```
 
 ### Goland
 
@@ -147,8 +432,6 @@ brew bundle --file="~/Documents/github/dotfiles/Brewfile"
 ## 报错及解决汇总
 
 
-
-
 ### brew 安装 tar 报错
 
 ``` shell
@@ -166,8 +449,6 @@ export HOMEBREW_BOTTLE_DOMAIN=''
 恢复其自动生成
 
 `defaults delete com.apple.desktopservices DSDontWriteNetworkStores`
-
-
 
 
 
@@ -192,6 +473,18 @@ export HOMEBREW_BOTTLE_DOMAIN=''
 
 
 
+
+## nvim 配置
+
+
+
+
+
+
+
+## 终端配置
+
+### kitty
 
 
 
